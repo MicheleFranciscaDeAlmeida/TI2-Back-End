@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>br.pucminas.ti2</groupId>
+    <artifactId>ti2-maven-teste</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <name>TI 2 Maven Teste</name>
+    <description>Projeto de Teste do Maven para o TI2</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.13</version>
+        </dependency>
+    </dependencies>
+
+</project>
