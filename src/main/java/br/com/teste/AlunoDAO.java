@@ -45,9 +45,25 @@ public class AlunoDAO {
     }
     
     // Lista todos os alunos cadastrados.
-    public void listar() {
+    public String listar() {
 
         String sql = "SELECT * FROM aluno";
+
+        String html = "<!DOCTYPE html>"
+                + "<html>"
+                + "<head>"
+                + "<meta charset='UTF-8'>"
+                + "<title>Lista de Alunos</title>"
+                + "</head>"
+                + "<body>"
+                + "<h1>Lista de Alunos</h1>"
+                + "<table border='1'>"
+                + "<tr>"
+                + "<th>ID</th>"
+                + "<th>Nome</th>"
+                + "<th>Curso</th>"
+                + "<th>Idade</th>"
+                + "</tr>";
 
         try (Connection conexao = conectar();
              java.sql.PreparedStatement stmt = conexao.prepareStatement(sql);
@@ -60,17 +76,24 @@ public class AlunoDAO {
                 String curso = resultado.getString("curso");
                 int idade = resultado.getInt("idade");
 
-                System.out.println(
-                    "ID: " + id +
-                    " | Nome: " + nome +
-                    " | Curso: " + curso +
-                    " | Idade: " + idade
-                );
+                html += "<tr>"
+                        + "<td>" + id + "</td>"
+                        + "<td>" + nome + "</td>"
+                        + "<td>" + curso + "</td>"
+                        + "<td>" + idade + "</td>"
+                        + "</tr>";
             }
 
         } catch (SQLException e) {
+
             throw new RuntimeException("Erro ao listar alunos.", e);
         }
+
+        html += "</table>"
+                + "</body>"
+                + "</html>";
+
+        return html;
     }
     
     // Exclui um aluno pelo seu ID.
