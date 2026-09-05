@@ -5,13 +5,16 @@ import static spark.Spark.*;
 public class Exercicio3 {
 
     public static void main(String[] args) {
-
+    	
+    	// Define a porta utilizada pelo servidor Spark.
         port(4568);
 
         System.out.println("EXECUTANDO EXERCICIO 3");
-
+        
+        // Cria o objeto DAO para realizar as operações no banco de dados.
         AlunoDAO dao = new AlunoDAO();
-
+        
+        // Exibe o formulário HTML de cadastro de alunos.
         get("/", (req, res) -> {
 
             String html =
@@ -43,9 +46,11 @@ public class Exercicio3 {
 
             return html;
         });
-
+        
+        // Recebe os dados enviados pelo formulário e cadastra o aluno.
         post("/cadastrar", (req, res) -> {
-
+        	
+        	// Obtém os dados enviados pelo formulário.
             int id = Integer.parseInt(req.queryParams("id"));
             String nome = req.queryParams("nome");
             String curso = req.queryParams("curso");
@@ -57,7 +62,8 @@ public class Exercicio3 {
 
             return "Aluno cadastrado com sucesso!";
         });
-
+        
+        // lista os alunos cadastrados no banco de dados em uma página HTML.
         get("/listar", (req, res) -> {
             return dao.listar();
         });
