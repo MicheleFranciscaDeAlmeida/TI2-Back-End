@@ -1,0 +1,26 @@
+.entrada {
+    text-align: center; /* alinhamento do texto */
+    padding: 40px; /* espaço interno */
+}
+
+.entrada img {
+    width: 180px; /* largura da imagem */
+    margin-bottom: 30px; /* espaço abaixo da imagem */
+}
+
+.entrada h1 {
+    font-size: 32px; /* tamanho da fonte */
+    margin-bottom: 10px; /* espaço abaixo do título */
+}
+
+.entrada p {
+    margin-bottom: 30px; /* espaço abaixo do parágrafo */
+}
+
+.entrada button {
+    padding: 12px 30px; /* tamanho interno do botão */
+    margin: 10px; /* espaço ao redor do botão */
+    border: none; /* sem borda */
+    border-radius: 8px; /* arredondamento dos cantos */
+    cursor: pointer; /* cursor vira uma mão */
+}
